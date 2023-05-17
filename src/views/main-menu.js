@@ -31,11 +31,14 @@ const MainMenu = (props) => {
           alt="Rectangle501578"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/5daa59f7-1c38-445e-994e-8a71545e5640?org_if_sml=11258"
           className="main-menu-rectangle50"
+          onClick={() => props.history.push('/car-page')}
         />
         <img
           alt="Rectangle475726"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/ad4cbc07-870d-4261-a423-e40e590e2fc8?org_if_sml=11258"
           className="main-menu-rectangle47"
+          onClick={() => props.history.push('/case-page')}
+
         />
         <span className="main-menu-text">
           <span>
@@ -73,6 +76,7 @@ const MainMenu = (props) => {
           alt="icons8car9611579"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/e2f4ff61-4dee-4028-9a69-9e7e72ef82c4?org_if_sml=1781"
           className="main-menu-icons8car961"
+          onClick={() => props.history.push('/car-page')}
         />
         <img
           alt="icons8person9611579"
@@ -105,6 +109,8 @@ const MainMenu = (props) => {
           alt="icons8folder100111671"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/e95806dd-3817-4ba7-b275-65a6dc77755a?org_if_sml=1529"
           className="main-menu-icons8folder10011"
+          onClick={() => props.history.push('/case-page')}
+
         />
       </div>
     </div>

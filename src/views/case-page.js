@@ -24,11 +24,15 @@ const CasePage = (props) => {
           alt="icons8home4821741"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/7caeb5c0-7c7b-4914-af77-f3b51507b921?org_if_sml=1446"
           className="case-page-icons8home482"
+          onClick={() => props.history.push('/main-menu')}
+
         />
         <img
           alt="icons8car4821741"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/630b819f-2420-41bd-9318-1279fc836b9d?org_if_sml=1680"
           className="case-page-icons8car482"
+          onClick={() => props.history.push('/car-page')}
+
         />
         <img
           alt="icons8person6421741"
@@ -46,7 +50,7 @@ const CasePage = (props) => {
           className="case-page-rectangle37"
         />
         <span className="case-page-text02">
-          <span>Rapid</span>
+          <span>ResolvRapid</span>
         </span>
         <span className="case-page-text04">
           <span>
@@ -66,8 +70,11 @@ const CasePage = (props) => {
           alt="Rectangle23091849"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/84e60289-4386-4d8b-92d2-b4cf9c25e964?org_if_sml=12366"
           className="case-page-rectangle23091"
+          onClick={() => props.history.push('/case-maker')}
+
         />
-        <span className="case-page-text09">
+          
+        <span className="case-page-text09" onClick={() => props.history.push('/case-maker')} >
           <span>Criar novo caso</span>
         </span>
       </div>

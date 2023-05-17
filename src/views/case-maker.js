@@ -5,6 +5,15 @@ import { Helmet } from 'react-helmet'
 import './case-maker.css'
 
 const CaseMaker = (props) => {
+
+  const createCase = () =>{
+    /*ADICIONAR AQUI CENAS PARA ADICIONAR UM CASO*/
+
+    props.history.push('/case-page')
+  }
+
+
+
   return (
     <div className="case-maker-container">
       <Helmet>
@@ -16,8 +25,11 @@ const CaseMaker = (props) => {
           alt="Rectangle23091848"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/4eab3fd6-de42-4335-a3f3-ac1ea630586b?org_if_sml=12265"
           className="case-maker-rectangle2309"
+          onClick={createCase}
+
         />
-        <span className="case-maker-text">
+          
+        <span className="case-maker-text" onClick={createCase} >
           <span>Concluir</span>
         </span>
         <img
@@ -29,11 +41,14 @@ const CaseMaker = (props) => {
           alt="icons8home4821699"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/8cd28897-65a3-440f-9292-b6edce41d80d?org_if_sml=1446"
           className="case-maker-icons8home482"
+          onClick={() => props.history.push('/main-menu')}
+
         />
         <img
           alt="icons8car4821699"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/8a76c5b3-ca2d-4d04-8f25-3be56af99d86?org_if_sml=1680"
           className="case-maker-icons8car482"
+          onClick={() => props.history.push('/car-page')}
         />
         <img
           alt="icons8person6421699"
@@ -44,6 +59,8 @@ const CaseMaker = (props) => {
           alt="icons8folder10011699"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/8b677bab-d57a-4686-9a38-86393617547f?org_if_sml=1498"
           className="case-maker-icons8folder1001"
+          onClick={() => props.history.push('/case-page')}
+
         />
         <span className="case-maker-text02">
           <span>Carro 1(meu carro):</span>
@@ -89,7 +106,7 @@ const CaseMaker = (props) => {
           className="case-maker-rectangle37"
         />
         <span className="case-maker-text11">
-          <span>Rapid</span>
+          <span>ResolvRapid</span>
         </span>
         <span className="case-maker-text13">
           <span>
@@ -109,6 +126,7 @@ const CaseMaker = (props) => {
           alt="image271841"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/0c85fd03-704a-4d25-b005-91842929cb82?org_if_sml=1514"
           className="case-maker-image27"
+          onClick={() => props.history.push('/case-page')}
         />
         <span className="case-maker-text18">
           <span>Carro 2:</span>

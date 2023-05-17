@@ -5,6 +5,15 @@ import { Helmet } from 'react-helmet'
 import './car-maker.css'
 
 const CarMaker = (props) => {
+
+  const joinCar = () =>{
+    /*ADICIONAR AQUI CENAS PARA ADICIONAR UM VEÍCULO*/
+
+    props.history.push('/car-page')
+  }
+
+
+
   return (
     <div className="car-maker-container">
       <Helmet>
@@ -74,16 +83,19 @@ const CarMaker = (props) => {
           alt="icons8car4821918"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/5a1877ef-4cf0-4c26-9921-e087393773a8?org_if_sml=1680"
           className="car-maker-icons8car482"
+          onClick={() => props.history.push('/car-page')}
         />
         <img
           alt="icons8person6421918"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/162cdd09-8f54-41b8-9d8e-758dcb20fcbd?org_if_sml=1605"
           className="car-maker-icons8person642"
+
         />
         <img
           alt="icons8folder10011918"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/a4169bd9-a830-490c-8a88-2cb4d6794d6f?org_if_sml=1498"
           className="car-maker-icons8folder1001"
+          onClick={() => props.history.push('/case-page')}
         />
         <img
           alt="Rectangle371918"
@@ -91,7 +103,7 @@ const CarMaker = (props) => {
           className="car-maker-rectangle37"
         />
         <span className="car-maker-text12">
-          <span>Rapid</span>
+          <span>ResolvRapid</span>
         </span>
         <span className="car-maker-text14">
           <span>
@@ -111,13 +123,17 @@ const CarMaker = (props) => {
           alt="image261918"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/0859afcb-605e-48e4-a77e-3acd3529b12a?org_if_sml=1515"
           className="car-maker-image26"
+          onClick={() => props.history.push('/car-page')}
         />
         <img
           alt="Rectangle23091918"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/b6204680-0e1d-4392-9385-b5e891cd295a/b04a9f00-4ec1-4220-abc9-68c915623b27?org_if_sml=12844"
           className="car-maker-rectangle23091"
+
+          /* FAZER CENAS AQUI PARA CRIAR UM NOVO VEÍCULO*/ 
+          onClick={joinCar}
         />
-        <span className="car-maker-text19">
+        <span className="car-maker-text19" onClick={joinCar}>
           <span>Adicionar Veículo</span>
           <br></br>
         </span>

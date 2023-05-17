@@ -5,6 +5,12 @@ import { Helmet } from 'react-helmet'
 import './login-page.css'
 
 const LoginPage = (props) => {
+
+  const handleLoginClick = () =>{
+    props.history.push('/main-menu')
+  }
+
+
   return (
     <div className="login-page-container">
       <Helmet>
@@ -27,12 +33,13 @@ const LoginPage = (props) => {
           src="/playground_assets/rectangle1618-xzji-400w.png"
           className="login-page-rectangle16"
         />
-        <div className="login-page-rectangle17">
+        <div className="login-page-rectangle17" onClick={ handleLoginClick}>
           <div className="login-page-rectangle171">
             <img
               alt="Rectangle17I233"
               src="/playground_assets/rectangle17i233-hue-200h.png"
               className="login-page-rectangle172"
+              
             />
           </div>
         </div>
