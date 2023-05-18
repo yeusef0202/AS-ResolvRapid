@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { SignIn } from './pages/SignIn';
 import  { Register } from './pages/Register';
-import  { Home} from './pages/Home';
+import  { Home } from './pages/Home';
 
 
 function App() {

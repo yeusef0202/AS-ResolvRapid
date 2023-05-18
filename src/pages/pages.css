@@ -67,3 +67,10 @@
     font-weight: 400;
     text-decoration: underline;
 }
+
+/* DEPOIS DO LOGIN */
+
+.holder{
+    display: grid;
+    grid-template-rows: 1fr 2.35fr 2rem;
+}

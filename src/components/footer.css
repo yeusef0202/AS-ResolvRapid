@@ -1,0 +1,23 @@
+.footer-box{
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 40px;
+    
+}
+
+.footer-box button{
+    width: 48px;
+    height: 48px;
+    background: none;
+    outline: none;
+    border: 2px var(--laranja) solid;
+    border-radius: 8px;
+    color: white;
+    font-size: 25px;
+    line-height: 20px;
+    cursor: pointer;
+}
