@@ -7,14 +7,14 @@ import { useNavigate } from 'react-router-dom';
 export function Home() {
   const navigate = useNavigate();
 
+  function gotoHome() {
+    navigate('/home')
+  }
   function gotoMapa() {
     navigate('/mapa')
   }
   function gotoCasos() {
     navigate('/register')
-  }
-  function gotoMapa() {
-      navigate('/')
   }
   function gotoConta() {
     navigate('/register')
@@ -22,7 +22,7 @@ export function Home() {
     return (
         <div className="bg">
           <div className="holder">
-            <div className="logo">
+            <div className="logo" onClick={gotoHome}>
               <p className='logo-align'><span style={{fontSize:'35px'}}>RESOLV</span><br></br><span style={{fontFamily: 'postnobills'}}>RAPID</span></p>
             </div>
             <div className="middle" style={{color:'white'}}>
