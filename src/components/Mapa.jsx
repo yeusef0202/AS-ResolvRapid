@@ -2,30 +2,79 @@ import React, { useEffect, useRef } from "react";
 import { Map, View } from "ol";
 import { Tile as TileLayer } from "ol/layer";
 import OSM from "ol/source/OSM";
-import { defaults as defaultControls } from "ol/control";
+import { useGeographic } from "ol/proj";
+import Geolocation from 'ol/Geolocation';
+import { Circle as CircleStyle, Fill, Style } from 'ol/style';
+import { Circle as CircleGeometry, Point } from 'ol/geom';
+import Feature from 'ol/Feature';
+import { Vector as VectorSource } from 'ol/source';
+import { Vector as VectorLayer } from 'ol/layer';
 
 export function Mapa() {
-    const mapRef = useRef(null);
+  useGeographic();
 
-    useEffect(() => {
-      const map = new Map({
-        target: mapRef.current,
-        layers: [
-          new TileLayer({
-            source: new OSM(),
-          }),
-        ],
-        view: new View({
-          center: [40, 22], // Adjust the center coordinates as needed
-          zoom: 5, // Adjust the zoom level as needed
+  const mapRef = useRef(null);
+
+  useEffect(() => {
+    const map = new Map({
+      target: mapRef.current,
+      layers: [
+        new TileLayer({
+          source: new OSM(),
         }),
-        controls: [],
-      });
+      ],
+      controls: [],
+    });
   
-      return () => {
-        map.setTarget(null);
-      };
-    }, []);
+    const view = new View({
+      zoom: 18,
+    });
+    map.setView(view);
   
-    return <div ref={mapRef} style={{ width: "100%", height: "100vh", position:'relative'}} />;
+    const geolocation = new Geolocation({
+      tracking: true,
+      trackingOptions: {
+        enableHighAccuracy: true,
+        maximumAge: 1000, 
+        timeout: 5000,
+      },
+      projection: 'EPSG:4326',
+    });
+  
+    geolocation.on('change', () => {
+      const coordinates = geolocation.getPosition();
+  
+      if (coordinates) {
+        setTimeout(() => {
+          view.setCenter(coordinates);
+        }, 1000);
+
+        const circleFeature = new Feature({
+          geometry: new CircleGeometry(coordinates, 0.0001), 
+        });
+  
+        const vectorSource = new VectorSource({
+          features: [circleFeature],
+        });
+  
+        const vectorLayer = new VectorLayer({
+          source: vectorSource,
+          style: new Style({
+            fill: new Fill({
+              color: 'rgba(255, 0, 0, 0.5)', 
+            }),
+          }),
+        });
+  
+        map.addLayer(vectorLayer);
+      }
+    });
+  
+    return () => {
+      map.setTarget(null);
+      geolocation.setTracking(false);
+    };
+  }, []);
+
+  return <div ref={mapRef} style={{ width: "100%", height: "100vh", position: 'relative' }} />;
 }
