@@ -21,7 +21,7 @@ export function Footer() {
     return (
         <div className="footer-box">
             <button><i class="fa-solid fa-house"></i></button>
-            <button ><i class="fa-solid fa-car"></i></button>
+            <button><i class="fa-solid fa-car"></i></button>
             <button><i class="fa-solid fa-folder"></i></button>
             <button><i class="fa-solid fa-user"></i></button>
         </div>
