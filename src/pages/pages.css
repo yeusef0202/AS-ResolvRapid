@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.home-holder{
+    width: 100%;
+    max-width: 360px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.logo{
+    flex: 1.55;
+}
+
+.logo .logo-align{
+    font-family: Quantico;
+    color: var(--laranja);
+    font-size: 85px;
+    text-align: center;
+    line-height: 60px;
+    margin-top: 6%;
+}
+
+.form-control{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-holder input{
+    margin: 15px 0px;
+    padding: 16px;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 20px;
+    border: 2px var(--laranja) solid;
+    border-radius: 8px;
+}
+
+.home-holder input::placeholder{
+    color: var(--cinzento);
+}
+
+.home-holder button{
+    margin-top: 15px;
+    background-color: var(--laranja);
+    padding: 16px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.home-holder .login-text{
+    color: white;
+    margin: 10px auto 0px auto;
+    font-size: 15px;
+}
+
+.home-holder a{
+    font-size: 15px;
+    color: var(--laranja);
+    margin: 0 auto;
+    font-weight: 400;
+    text-decoration: underline;
+}
