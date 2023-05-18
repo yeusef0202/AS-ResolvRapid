@@ -6,13 +6,13 @@ export function Footer() {
     const navigate = useNavigate();
 
     function gotoMapa() {
-      navigate('/')
+      navigate('/mapa')
     }
     function gotoCasos() {
-      navigate('/register')
+      navigate('/casos')
     }
-    function gotoMapa() {
-        navigate('/')
+    function gotoHome() {
+        navigate('/home')
     }
     function gotoConta() {
       navigate('/register')
@@ -20,10 +20,10 @@ export function Footer() {
 
     return (
         <div className="footer-box">
-            <button><i class="fa-solid fa-house"></i></button>
-            <button><i class="fa-solid fa-car"></i></button>
-            <button><i class="fa-solid fa-folder"></i></button>
-            <button><i class="fa-solid fa-user"></i></button>
+            <button onClick={gotoHome}><i className="fa-solid fa-house"></i></button>
+            <button><i className="fa-solid fa-car"></i></button>
+            <button onClick={gotoCasos}><i className="fa-solid fa-folder"></i></button>
+            <button><i className="fa-solid fa-user"></i></button>
         </div>
     )
 }

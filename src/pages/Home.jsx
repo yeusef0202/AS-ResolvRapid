@@ -14,7 +14,7 @@ export function Home() {
     navigate('/mapa')
   }
   function gotoCasos() {
-    navigate('/register')
+    navigate('/casos')
   }
   function gotoConta() {
     navigate('/register')
@@ -28,7 +28,7 @@ export function Home() {
             <div className="middle" style={{color:'white'}}>
               <div className="menu">
                 <div className="menu-item" onClick={gotoMapa}>Mapa</div>
-                <div className="menu-item">Meus Casos</div>
+                <div className="menu-item" onClick={gotoCasos}>Meus Casos</div>
                 <div className="menu-item">Meus Veículos</div>
                 <div className="menu-item">Detalhes da Conta</div>
               </div>
