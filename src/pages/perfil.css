@@ -1,0 +1,62 @@
+
+.holder-perfil{
+    display: grid;
+    grid-template-rows: 3.35fr 2rem;
+}
+
+.perfil-box{
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.topo-perfil{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+.foto-perfil{
+    width: 140px;
+    height: 140px;
+    background-color: #789CD8;
+    margin: 0 auto;
+    border-radius: 100%;
+    margin: 10px auto;
+    padding: 5px;
+}
+
+.logo{
+    font-size: 38px;
+    color: white;
+}
+
+.botao-opcoes{
+    color: black;
+    background-color: white;
+    height: 48px;
+    width: 48px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 48px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.foto-perfil img{
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+}
+
+.perfil-nome{
+    color: white;
+    width: 100%;
+    text-align: center;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+

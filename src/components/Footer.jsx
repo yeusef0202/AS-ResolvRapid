@@ -17,13 +17,16 @@ export function Footer() {
     function gotoConta() {
       navigate('/register')
     }
+    function gotoPerfil() {
+      navigate('/perfil')
+    }
 
     return (
         <div className="footer-box">
             <button onClick={gotoHome}><i className="fa-solid fa-house"></i></button>
             <button><i className="fa-solid fa-car"></i></button>
             <button onClick={gotoCasos}><i className="fa-solid fa-folder"></i></button>
-            <button><i className="fa-solid fa-user"></i></button>
+            <button onClick={gotoPerfil}><i className="fa-solid fa-user"></i></button>
         </div>
     )
 }
