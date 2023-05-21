@@ -35,7 +35,26 @@ export function Perfil() {
                         <span style={{fontSize:'24px', fontWeight:'600'}}>João Miguel</span>
                     </div>
                     <div className="perfil-infos">
-                        
+                        <div className="item-perfil">
+                            Nº de acidentes:<br></br><span>54</span>
+                        </div>
+                        <div className="item-perfil">
+                            Casos:<br></br><span>10</span>
+                        </div>
+                        <div className="item-perfil">
+                            Veículos:<br></br><span>3</span>
+                        </div>
+                    </div>
+                    <div className="contatos">
+                        <div className="item-contato" style={{fontWeight:'bold'}}>Telefone</div>
+                        <div className="item-contato">+351 96 xxx xx xx</div>
+                        <div className="item-contato" style={{fontWeight:'bold'}}>Email</div>
+                        <div className="item-contato">Loremipsum@gmail.com</div>
+                        <div className="item-contato" style={{fontWeight:'bold'}}>Línguas</div>
+                        <div className="item-contato">Português, Inglês</div>
+                    </div>
+                    <div className="logout">
+                        <button>Log Out</button>
                     </div>
                 </div>
                 <Footer />
