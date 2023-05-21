@@ -11,7 +11,15 @@ export function Map() {
   function gotoHome() {
     navigate("/home");
   }
-
+  function gotoCasos() {
+    navigate("/casos");
+  }
+  function gotoPerfil() {
+    navigate("/perfil");
+  }
+  function gotoCarros() {
+    navigate('/carros')
+  }
   function toggleMarkers() {
     setShowMarkers((prevShowMarkers) => !prevShowMarkers);
     console.log("carrinhos")
@@ -30,9 +38,9 @@ export function Map() {
           </div>
           <div className="item2">
             <button onClick={gotoHome}><i className="fa-solid fa-house"></i></button>
-            <button><i className="fa-solid fa-car"></i></button>
-            <button><i className="fa-solid fa-folder"></i></button>
-            <button><i className="fa-solid fa-user"></i></button>
+            <button onClick={gotoCarros}><i className="fa-solid fa-car"></i></button>
+            <button onClick={gotoCasos}><i className="fa-solid fa-folder"></i></button>
+            <button onClick={gotoPerfil}><i className="fa-solid fa-user"></i></button>
           </div>
         </div>
       </div>

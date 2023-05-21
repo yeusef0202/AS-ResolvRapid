@@ -1,4 +1,11 @@
+import { useNavigate } from 'react-router-dom';
+
 export function Register() {
+  const navigate = useNavigate();
+
+  function gotoHome() {
+    navigate('/home')
+  }
     return ( 
         <div className="bg">
           <div className="home-holder">
@@ -9,7 +16,7 @@ export function Register() {
               <input type="text" placeholder='Email' />
               <input type="password" placeholder='Password'/>
               <input type="password" placeholder='Confirm Password'/>      
-              <button>Sign Up</button>
+              <button onClick={gotoHome}>Sign Up</button>
               <p className='login-text'>Already have an account yet?</p>
               <a href='/'>Sign in to your account</a>
             </form>

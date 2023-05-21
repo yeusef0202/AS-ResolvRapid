@@ -16,8 +16,8 @@ export function Perfil() {
   function gotoCasos() {
     navigate('/casos')
   }
-  function gotoConta() {
-    navigate('/register')
+  function logout() {
+    navigate('/')
   }
     return (
         <div className="bg">
@@ -25,7 +25,7 @@ export function Perfil() {
                 <div className='perfil-box'>
                     <div className="topo-perfil">
                         <div className="logo" style={{fontFamily: 'postnobills'}}><b>Resolv</b>Rapid</div>
-                        <div className="botao-opcoes"><i class="fa-solid fa-gear"></i></div>
+                        <div className="botao-opcoes"><i className="fa-solid fa-gear"></i></div>
                     </div>
                     <div className="foto-perfil">
                         <img src="https://i.imgur.com/cfpvbq2.jpeg" alt="" />
@@ -54,7 +54,7 @@ export function Perfil() {
                         <div className="item-contato">Português, Inglês</div>
                     </div>
                     <div className="logout">
-                        <button>Log Out</button>
+                        <button onClick={logout}>Log Out</button>
                     </div>
                 </div>
                 <Footer />

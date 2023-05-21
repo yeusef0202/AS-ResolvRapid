@@ -14,8 +14,8 @@ export function Footer() {
     function gotoHome() {
         navigate('/home')
     }
-    function gotoConta() {
-      navigate('/register')
+    function gotoCarros() {
+      navigate('/carros')
     }
     function gotoPerfil() {
       navigate('/perfil')
@@ -24,7 +24,7 @@ export function Footer() {
     return (
         <div className="footer-box">
             <button onClick={gotoHome}><i className="fa-solid fa-house"></i></button>
-            <button><i className="fa-solid fa-car"></i></button>
+            <button onClick={gotoCarros}><i className="fa-solid fa-car"></i></button>
             <button onClick={gotoCasos}><i className="fa-solid fa-folder"></i></button>
             <button onClick={gotoPerfil}><i className="fa-solid fa-user"></i></button>
         </div>

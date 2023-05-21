@@ -19,6 +19,9 @@ export function Home() {
   function gotoConta() {
     navigate('/perfil')
   }
+  function gotoCarros() {
+    navigate('/carros')
+  }
     return (
         <div className="bg">
           <div className="holder">
@@ -29,7 +32,7 @@ export function Home() {
               <div className="menu">
                 <div className="menu-item" onClick={gotoMapa}>Mapa</div>
                 <div className="menu-item" onClick={gotoCasos}>Meus Casos</div>
-                <div className="menu-item">Meus Veículos</div>
+                <div className="menu-item" onClick={gotoCarros}>Meus Veículos</div>
                 <div className="menu-item" onClick={gotoConta}>Detalhes da Conta</div>
               </div>
             </div>
