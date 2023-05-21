@@ -6,6 +6,10 @@ export function Register() {
   function gotoHome() {
     navigate('/home')
   }
+  function gotoBegin() {
+    navigate('/')
+  }
+  
     return ( 
         <div className="bg">
           <div className="home-holder">
@@ -18,7 +22,7 @@ export function Register() {
               <input type="password" placeholder='Confirm Password'/>      
               <button onClick={gotoHome}>Sign Up</button>
               <p className='login-text'>Already have an account yet?</p>
-              <a href='/'>Sign in to your account</a>
+              <a onClick={gotoBegin}>Sign in to your account</a>
             </form>
           </div>
         </div>

@@ -9,6 +9,9 @@ import { Caso1 } from './cases/Caso1';
 import { Perfil } from './pages/Perfil';
 import { Carros } from './pages/Carros';
 import { Adicionar } from './pages/Adicionar';
+import { CarPage } from './pages/CarPage';
+import { Qr } from './pages/Qr';
+
 
 function App() {
 
@@ -22,8 +25,10 @@ function App() {
         <Route path='/casos' element={<Casos />} />
         <Route path='/casos/Caso1' element={<Caso1 />} />
         <Route path='/perfil' element={<Perfil />} />
-        <Route path='/carros' element={<Carros></Carros>}></Route>
-        <Route path='/carros/adicionar' element={<Adicionar></Adicionar>}></Route>
+        <Route exact path="/carros" element={<Carros />} />
+        <Route exact path="/carros/adicionar" element={<Adicionar />} />
+        <Route exact path="/carros/:id" element={<CarPage />} />
+        <Route exact path="/QR" element={<Qr />} />
       </Routes>
 
     </div>

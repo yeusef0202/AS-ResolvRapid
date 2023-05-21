@@ -1,7 +1,7 @@
 import './pages.css';
 import './logged.css';
 import { Footer } from '../components/Footer';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './carros.css';
 import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
@@ -29,7 +29,7 @@ export function Carros() {
           <div className="title">Os meus carros:</div>
           <div className="carros-lista">
             {carrosLista.map((carro, index) => (
-              <div className="carro" key={index}>{carro}</div>
+              <Link to={`/carros/${index}`} key={index} className="carro">{carro.matricula}</Link>
             ))}
           </div>
           <button onClick={adicionar}>Adicionar Veículo</button>

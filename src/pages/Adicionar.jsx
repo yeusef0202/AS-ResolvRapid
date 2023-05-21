@@ -11,12 +11,22 @@ export function Adicionar() {
   const [matricula, setMatricula] = useState('');
   const [marca, setMarca] = useState('');
   const [modelo, setModelo] = useState('');
+  const [tipo, setTipo] = useState('');
+  const [pais, setPais] = useState('');
+  const [apolice, setApolice] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    // Create a new car string with the provided data
-    const newCarro = `Carro ${marca} ${modelo} ${matricula}`;
+    // Create a new car object with the provided data
+    const newCarro = {
+      tipo,
+      marca,
+      modelo,
+      matricula,
+      pais,
+      apolice,
+    };
 
     // Retrieve the existing carros from cookies
     const storedCarros = Cookies.get('carros');
@@ -32,6 +42,9 @@ export function Adicionar() {
     setMatricula('');
     setMarca('');
     setModelo('');
+    setTipo('');
+    setPais('');
+    setApolice('');
 
     // Redirect to the Carros page
     navigate('/carros');
@@ -46,7 +59,9 @@ export function Adicionar() {
             <input type="text" placeholder="Matrícula:" value={matricula} onChange={e => setMatricula(e.target.value)} />
             <input type="text" placeholder="Marca:" value={marca} onChange={e => setMarca(e.target.value)} />
             <input type="text" placeholder="Modelo:" value={modelo} onChange={e => setModelo(e.target.value)} />
-            {/* Add more input fields for other car details if needed */}
+            <input type="text" placeholder="Tipo de veículo:" value={tipo} onChange={e => setTipo(e.target.value)} />
+            <input type="text" placeholder="País registado::" value={pais} onChange={e => setPais(e.target.value)} />
+            <input type="text" placeholder="Apólice:" value={apolice} onChange={e => setApolice(e.target.value)} />
             <button type="submit" style={{ marginTop: '20px' }}>Adicionar</button>
           </form>
         </div>

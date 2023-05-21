@@ -7,6 +7,10 @@ export function SignIn() {
   function gotoHome() {
     navigate('/home')
   }
+  function gotoRegister() {
+    navigate('/register')
+  }
+
 
     return (
         <div className="bg">
@@ -19,7 +23,7 @@ export function SignIn() {
               <input type="password" placeholder='Password'/>
               <button onClick={gotoHome}>Log in</button>
               <p className='login-text'>Don't have an account yet?</p>
-              <a href='/register'>Create an account</a>
+              <a onClick={gotoRegister}>Create an account</a>
             </form>
           </div>
         </div>
