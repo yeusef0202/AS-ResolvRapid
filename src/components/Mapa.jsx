@@ -45,6 +45,7 @@ export function Mapa({ showCars }) {
 
     geolocation.on("change", () => {
       const coordinates = geolocation.getPosition();
+      console.log(coordinates);
 
       if (coordinates) {
         setTimeout(() => {
@@ -85,7 +86,7 @@ export function Mapa({ showCars }) {
     if (showCars && map && markerLayer) {
       const coordinates1 = [-8.648462, 40.649172];
       const coordinates2 = [-8.653247, 40.646909];
-      const coordinates3 = [-8.648693, 40.632694]
+      const coordinates3 = [-8.648693, 40.632694];
   
       const markerFeature1 = new Feature({
         geometry: new Point(coordinates1),

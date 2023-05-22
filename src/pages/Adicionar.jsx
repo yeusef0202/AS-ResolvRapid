@@ -60,7 +60,7 @@ export function Adicionar() {
             <input type="text" placeholder="Marca:" value={marca} onChange={e => setMarca(e.target.value)} />
             <input type="text" placeholder="Modelo:" value={modelo} onChange={e => setModelo(e.target.value)} />
             <input type="text" placeholder="Tipo de veículo:" value={tipo} onChange={e => setTipo(e.target.value)} />
-            <input type="text" placeholder="País registado::" value={pais} onChange={e => setPais(e.target.value)} />
+            <input type="text" placeholder="País registado:" value={pais} onChange={e => setPais(e.target.value)} />
             <input type="text" placeholder="Apólice:" value={apolice} onChange={e => setApolice(e.target.value)} />
             <button type="submit" style={{ marginTop: '20px' }}>Adicionar</button>
           </form>

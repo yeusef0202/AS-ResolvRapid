@@ -29,7 +29,7 @@ export function Carros() {
           <div className="title">Os meus carros:</div>
           <div className="carros-lista">
             {carrosLista.map((carro, index) => (
-              <Link to={`/carros/${index}`} key={index} className="carro">{carro.matricula}</Link>
+              <Link to={`/carros/${index}`} key={index} className="carro">{carro.marca}: {carro.matricula}</Link>
             ))}
           </div>
           <button onClick={adicionar}>Adicionar Veículo</button>
