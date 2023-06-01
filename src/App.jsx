@@ -11,6 +11,7 @@ import { Carros } from './pages/Carros';
 import { Adicionar } from './pages/Adicionar';
 import { CarPage } from './pages/CarPage';
 import { Qr } from './pages/Qr';
+import { NewCase } from './pages/NewCase';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/mapa' element={<Map />} />
         <Route path='/casos' element={<Casos />} />
+        <Route path='/casos/novo' element={<NewCase />} />
         <Route path='/casos/Caso1' element={<Caso1 />} />
         <Route path='/perfil' element={<Perfil />} />
         <Route exact path="/carros" element={<Carros />} />
