@@ -14,7 +14,9 @@ export function NewCase() {
   const videoRef = useRef(null);
   const [isButtonClicked, setIsButtonClicked] = useState(false); // New state for button click
   const [description, setDescription] = useState(''); // Add the description state
-
+  const [caseId, setCaseId] = useState(0);
+  const [occurrenceDate, setOccurrenceDate] = useState(new Date().toISOString().slice(0, 10));
+  
   const handleAutomaticLocationClick = (event) => {
     event.preventDefault();
     setIsButtonClicked(true); // Set isButtonClicked to true when the button is clicked
@@ -43,8 +45,19 @@ export function NewCase() {
     setCarrosLista(parsedCarros);
   }, [isModalOpen]);
 
+  useEffect(() => {
+    // Retrieve the last used case ID from cookies
+    const storedCaseId = Cookies.get('caseId');
+    const parsedCaseId = storedCaseId ? parseInt(storedCaseId) : 0;
+    setCaseId(parsedCaseId);
+  }, []);
+  
+
   function gotoHome() {
     navigate('/home');
+  }
+  function gotoCasos() {
+    navigate('/casos');
   }
 
   const handleCheckboxChange = (event) => {
@@ -64,24 +77,33 @@ export function NewCase() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const newCase = {
+      id: caseId,
+      occurrenceDate: occurrenceDate,
       location: 'Rua da Pega - Aveiro - Portugal',
       carro: document.getElementById('Carro1').value,
       outroEnvolvido: isOutroEnvolvidoChecked ? '1' : '0',
       description: description,
+      status: 'A decorrer',
     };
-
+  
+    // Increment the case ID for the next case
+    setCaseId((prevId) => prevId + 1);
+  
+    // Store the updated case ID in cookies
+    Cookies.set('caseId', caseId + 1);
+  
     // Retrieve existing cases from cookies
     const storedCases = Cookies.get('cases');
     const parsedCases = storedCases ? JSON.parse(storedCases) : [];
-
+  
     // Add the new case to the existing list of cases
     const updatedCases = [...parsedCases, newCase];
-
+  
     // Store the updated cases list in cookies
     Cookies.set('cases', JSON.stringify(updatedCases));
-
-    alert('New case created!');
+    gotoCasos();
   };
+  
 
   const novoCarro = {
     matricula: 'AB-123-CD',
@@ -117,7 +139,10 @@ export function NewCase() {
             marginTop: '-30px',
           }}
         >
+          <div style={{display:'grid', gridTemplateColumns:'auto 1fr', gap:'10px', alignItems:'center'}}>
+          <button onClick={gotoCasos} style={{padding:'8px 10px', fontSize:'17px'}}><i className="fa-solid fa-left-long"></i> Voltar</button>
           <h2 style={{ textAlign: 'left', textShadow: '0px 0px 4px #000000' }}>A criar um novo caso:</h2>
+          </div>
           <form onSubmit={handleSubmit}>
             <select
               name=""
@@ -129,7 +154,7 @@ export function NewCase() {
                 Carro 1 (meu carro):
               </option>
               {carrosLista.map((carro, index) => (
-                <option value={index} key={index}>
+                <option value={carro.marca +': '+ carro.matricula} key={index}>
                   {carro.marca}: {carro.matricula}
                 </option>
               ))}
@@ -221,8 +246,8 @@ export function NewCase() {
                 name=""
                 id=""
                 cols="30"
-                rows="10"
-                style={{ width: '100%', resize: 'none' }}
+                rows="8"
+                style={{ width: '100%', resize: 'none', fontSize:'17px'}}
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
