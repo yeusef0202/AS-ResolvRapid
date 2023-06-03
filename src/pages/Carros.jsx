@@ -17,7 +17,34 @@ export function Carros() {
   useEffect(() => {
     // Retrieve carros from cookies
     const storedCarros = Cookies.get('carros');
-    const parsedCarros = storedCarros ? JSON.parse(storedCarros) : [];
+    let parsedCarros = storedCarros ? JSON.parse(storedCarros) : [];
+
+    // Check if carros have been stored before
+    if (parsedCarros.length === 0) {
+      // Set default carros
+      const defaultCarros = [
+        {
+          matricula: 'AB-123-CD',
+          marca: 'Ford',
+          modelo: 'Fiesta',
+          pais: 'Portugal',
+          apolice: '123456789',
+        },
+        {
+          matricula: 'XY-987-ZW',
+          marca: 'Volkswagen',
+          modelo: 'Golf',
+          pais: 'Alemanha',
+          apolice: '987654321',
+        },
+      ];
+
+      parsedCarros = defaultCarros;
+
+      // Store default carros in cookies
+      Cookies.set('carros', JSON.stringify(defaultCarros));
+    }
+
     setCarrosLista(parsedCarros);
   }, []);
 
