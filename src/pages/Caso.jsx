@@ -1,3 +1,5 @@
+// Caso.js
+
 import '../pages/pages.css';
 import '../pages/logged.css';
 import '../pages/Casos.css';
@@ -12,11 +14,8 @@ export function Caso() {
   const [caseData, setCaseData] = useState(null);
 
   useEffect(() => {
-    // Retrieve cases from cookies
     const storedCases = Cookies.get('cases');
     const parsedCases = storedCases ? JSON.parse(storedCases) : [];
-
-    // Find the case that matches the provided ID
     const matchedCase = parsedCases.find((caseItem) => caseItem.id === Number(id));
 
     if (matchedCase) {
@@ -26,12 +25,19 @@ export function Caso() {
     }
   }, [id]);
 
+  function deleteCase() {
+    const storedCases = Cookies.get('cases');
+    const parsedCases = storedCases ? JSON.parse(storedCases) : [];
+    const updatedCases = parsedCases.filter((caseItem) => caseItem.id !== Number(id));
+    Cookies.set('cases', JSON.stringify(updatedCases));
+    navigate('/casos');
+  }
+
   function gotoHome() {
     navigate('/home');
   }
 
   if (!caseData) {
-    // Render a loading state or an error message if the case is not found
     return <div>Loading...</div>;
   }
 
@@ -47,7 +53,6 @@ export function Caso() {
         return 'transparent';
     }
   }
-  
 
   return (
     <div className="bg">
@@ -62,14 +67,15 @@ export function Caso() {
         <div className="middle casos-holder" style={{ color: 'white' }}>
           <div className="title-case">Caso: {id}</div>
           <div className="case-box">
-          <div className="item-case">
-  Estado: <span style={{ backgroundColor: getStatusColor(caseData.status), borderRadius:'10px', padding:'0px 10px'}}>{caseData.status}</span>
-</div>            <div className="item-case">Carro: {caseData.carro}</div>
+            <div className="item-case">
+              Estado: <span style={{ backgroundColor: getStatusColor(caseData.status), borderRadius: '10px', padding: '0px 10px' }}>{caseData.status}</span>
+            </div>
+            <div className="item-case">Carro: {caseData.carro}</div>
             <div className="item-case">Seguradora: SAFE.INC</div>
             <div className="item-case">Nº Apolice: 3213121</div>
             <div className="item-case">Descrição: {caseData.description}</div>
           </div>
-          <button style={{ backgroundColor: '#961515', color: '#000', fontSize: '18px' }}>
+          <button onClick={deleteCase} style={{ backgroundColor: '#961515', color: '#000', fontSize: '18px' }}>
             Eliminar caso
           </button>
         </div>

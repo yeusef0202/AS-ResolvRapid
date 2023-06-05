@@ -1,3 +1,5 @@
+// Casos.js
+
 import './pages.css';
 import './logged.css';
 import './Casos.css';
@@ -43,36 +45,25 @@ export function Casos() {
     }
   }, []);
   
-
-  useEffect(() => {
-    // Retrieve cases from cookies
+  function deleteCase(id) {
     const storedCases = Cookies.get('cases');
     const parsedCases = storedCases ? JSON.parse(storedCases) : [];
-    setCases(parsedCases);
-  }, []);
+    const updatedCases = parsedCases.filter((caseItem) => caseItem.id !== id);
+    Cookies.set('cases', JSON.stringify(updatedCases));
+    setCases(updatedCases);
+  }
 
   function gotoHome() {
     navigate('/home');
   }
 
-  function gotoCasos() {
-    navigate('/casos');
-  }
-
-  function gotoCaso1() {
-    navigate('/casos/caso1');
+  function gotoCaso(id) {
+    navigate(`/casos/caso/${id}`);
   }
 
   function gotoNewCase() {
     navigate('/casos/novo');
   }
-
-  function gotoCaso(id) {
-    console.log( Cookies.get('cases'));
-    console.log(Cookies.get('carros'))
-    navigate(`/casos/caso/${id}`);
-  }
-  
 
   return (
     <div className="bg">
@@ -85,15 +76,23 @@ export function Casos() {
           </p>
         </div>
         <div className="middle casos-holder" style={{ color: 'white' }}>
-          <div className="title"><button onClick={gotoHome} style={{padding:'8px 10px', fontSize:'17px'}}><i className="fa-solid fa-left-long"></i> Voltar</button> Os meus casos:</div>
+          <div className="title">
+            <button onClick={gotoHome} style={{ padding: '8px 10px', fontSize: '17px' }}>
+              <i className="fa-solid fa-left-long"></i> Voltar
+            </button>{' '}
+            Os meus casos:
+          </div>
           <div className="cases">
             {cases.map((caseItem, index) => (
-              <div className="case" key={index} onClick={() => gotoCaso(caseItem.id)} style={{fontSize:'17px', padding:'5px 5px'}}>
+              <div className="case" key={index} onClick={() => gotoCaso(caseItem.id)} style={{ fontSize: '17px', padding: '5px 5px' }}>
                 Caso nº <b>{caseItem.id}</b> : {caseItem.occurrenceDate} - {caseItem.location}
+                
               </div>
             ))}
           </div>
-          <button onClick={gotoNewCase} style={{padding:'5px 28px', fontSize:'18px', fontWeight:'600'}}>Criar novo caso</button>
+          <button onClick={gotoNewCase} style={{ padding: '5px 28px', fontSize: '18px', fontWeight: '600' }}>
+            Criar novo caso
+          </button>
         </div>
         <Footer></Footer>
       </div>
