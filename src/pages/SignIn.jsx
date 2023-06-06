@@ -12,6 +12,11 @@ export function SignIn() {
     setEmail(event.target.value);
   }
 
+  function gotoRegister() {
+    navigate('/register')
+  }
+  
+
   function handlePasswordChange(event) {
     setPassword(event.target.value);
   }
@@ -58,7 +63,7 @@ export function SignIn() {
           />
           <button onClick={gotoHome}>Log in</button>
           <p className='login-text'>Don't have an account yet?</p>
-          <a href='/register'>Create an account</a>
+          <a href='' onClick={gotoRegister}>Create an account</a>
         </form>
       </div>
     </div>

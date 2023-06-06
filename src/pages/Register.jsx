@@ -24,6 +24,14 @@ export function Register() {
     
   }
 
+  function gotoRegister() {
+    navigate('/register')
+  }
+  
+  function gotoLogin() {
+    navigate('/')
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -44,6 +52,7 @@ export function Register() {
     // Store the registered email in localStorage
     localStorage.setItem('registeredEmail', email);
     localStorage.setItem('registeredPassword', password);
+    gotoLogin();
 
 
     // Reset the form
@@ -83,7 +92,7 @@ export function Register() {
           />
           <button type="submit">Sign Up</button>
           <p className='login-text'>Already have an account yet?</p>
-          <a href='/'>Sign in to your account</a>
+          <a onClick={gotoLogin}>Sign in to your account</a>
         </form>
       </div>
     </div>
