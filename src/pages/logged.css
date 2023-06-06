@@ -1,0 +1,81 @@
+.middle{
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.menu-item {
+    width: 115px;
+    height: 115px;
+    background-color: hsla(32, 98%, 61%, 0.25);
+    border-radius: 30px;
+    margin-bottom: 40px;
+    border: 1px var(--laranja) solid;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-size: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* mapa */
+
+.box-mapa{
+    width: 320px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 8px 8px 0px 0px;
+    background-color: white;
+    color: black !important;
+    position: relative;
+    margin-top: -200px;
+    box-shadow: 0px 5px 15px rgba(48, 48, 48, 0.2);
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    padding: 0px 15px;
+}
+
+.box-mapa .item1{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 27px;
+    font-weight: 900;
+    padding-top: 15px;
+}
+
+.box-mapa .item2{
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    display: grid;
+    margin-top: 35px;
+    grid-template-columns: repeat(4,1fr);
+    gap: 40px;
+    margin-bottom: 15px;
+}
+
+.box-mapa button{
+    width: 48px;
+    height: 48px;
+    background: none;
+    outline: none;
+    border: 2px black solid;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    line-height: 20px;
+    cursor: pointer;
+}
